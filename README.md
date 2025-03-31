@@ -104,15 +104,12 @@ git push origin feature/ma-fonctionnalite
 
 - Faites des commits atomiques (une seule fonctionnalité/correction par commit)
 - Utilisez des messages de commit clairs et descriptifs
-- Préfixez vos messages (feat:, fix:, docs:, etc.)
 - Commitez régulièrement pour éviter les conflits complexes
 
 ### Gestion des branches
 
 - `main`: branche principale, toujours stable
 - `feature/*`: pour développer de nouvelles fonctionnalités
-- `fix/*`: pour corriger des bugs
-- `docs/*`: pour les modifications de documentation
 
 ## Structure du projet
 
