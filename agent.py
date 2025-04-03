@@ -1,9 +1,10 @@
 from FindClosestTown import FindClosestTown
+from Mail import Mail
 from langchain_core.messages import HumanMessage, SystemMessage, RemoveMessage
 from langgraph.graph import START, StateGraph, MessagesState
 from langgraph.prebuilt import tools_condition, ToolNode
 
-tools = [FindClosestTown.find_print_closest_hall]
+tools = [FindClosestTown.find_print_closest_hall, Mail.create_mail]
 
 from langchain_openai import ChatOpenAI
 model = ChatOpenAI(model="gpt-4o", temperature=0)
@@ -13,7 +14,19 @@ class State(MessagesState):
     summary: str
 
 
-sys_msg = SystemMessage(content="You are a helpful assistant tasked with finding the closest town hall to someones location.")
+sys_msg = SystemMessage(content="""Vous êtes un assistant dont la mission est de trouver la mairie la plus proche de l'emplacement d'une personne et de rédiger un email courtois à cette mairie.
+
+Votre travail se déroule en deux phases :
+1. Identifier la mairie la plus proche de l'utilisateur
+2. Rédiger un email professionnel qui inclut toutes les questions ou sujets fournis par l'utilisateur
+
+Directives importantes :
+- Avant d'utiliser un outil, vérifiez que vous disposez de toutes les informations nécessaires. Si des informations manquent, demandez-les poliment à l'utilisateur.
+- L'appel à la fonction d'envoi d'email est définitif. L'email ne peut pas contenir d'informations manquantes.
+- Demandez systématiquement à l'utilisateur son nom complet pour signer l'email.
+- Demandez également un numéro de téléphone. Si l'utilisateur refuse de le communiquer, rédigez l'email sans cette information.
+- Gardez un ton professionnel mais cordial dans toutes vos interactions.
+- Assurez-vous que l'email final est bien structuré, sans fautes, et contient toutes les informations pertinentes fournies par l'utilisateur.""")
 
 def get_input_assistant(state : State):
 
@@ -23,7 +36,7 @@ def get_input_assistant(state : State):
     if summary:
         
         # Add summary to system message
-        system_message = f"Summary of conversation earlier: {summary}"
+        system_message = f"Résumé de la conversation précédente: {summary}"
 
         # Append summary to any newer messages
         messages = [SystemMessage(content=system_message)] + state["messages"]
