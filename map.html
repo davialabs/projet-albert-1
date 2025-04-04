@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_641ec5fe43460d848054e741f24e0014 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_641ec5fe43460d848054e741f24e0014" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_641ec5fe43460d848054e741f24e0014 = L.map(
+                "map_641ec5fe43460d848054e741f24e0014",
+                {
+                    center: [47.3709362, 3.1224615],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 10,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_0ef7167dcb7820be40409ae34c7b83e5 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_0ef7167dcb7820be40409ae34c7b83e5.addTo(map_641ec5fe43460d848054e741f24e0014);
+        
+    
+            var marker_70adb037bd039676fe9fa5b935f240be = L.marker(
+                [47.371185, 3.122378],
+                {
+}
+            ).addTo(map_641ec5fe43460d848054e741f24e0014);
+        
+    
+            var icon_c2f56af3a3439211e895f25ce2c2c966 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e5fedac273cf0c58e0583c5bf67793b8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_15279504febc2332ce81dec3cd6f7958 = $(`<div id="html_15279504febc2332ce81dec3cd6f7958" style="width: 100.0%; height: 100.0%;">Mairie - Donzy affairesgeneralesmairie@donzy.fr https://www.donzy.fr</div>`)[0];
+                popup_e5fedac273cf0c58e0583c5bf67793b8.setContent(html_15279504febc2332ce81dec3cd6f7958);
+            
+        
+
+        marker_70adb037bd039676fe9fa5b935f240be.bindPopup(popup_e5fedac273cf0c58e0583c5bf67793b8)
+        ;
+
+        
+    
+    
+            marker_70adb037bd039676fe9fa5b935f240be.bindTooltip(
+                `<div>
+                     Mairie
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_70adb037bd039676fe9fa5b935f240be.setIcon(icon_c2f56af3a3439211e895f25ce2c2c966);
+            
+    
+            var marker_755ae31161c52fb5644f833743bda1bc = L.marker(
+                [47.3709362, 3.1224615],
+                {
+}
+            ).addTo(map_641ec5fe43460d848054e741f24e0014);
+        
+    
+            var icon_85d4aa857ced0d171c99816fed26abf2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_392313fbca60bf2802e965e39235351b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f8282afb30b88fea087f86a8ac68ae4f = $(`<div id="html_f8282afb30b88fea087f86a8ac68ae4f" style="width: 100.0%; height: 100.0%;">Donzy, France</div>`)[0];
+                popup_392313fbca60bf2802e965e39235351b.setContent(html_f8282afb30b88fea087f86a8ac68ae4f);
+            
+        
+
+        marker_755ae31161c52fb5644f833743bda1bc.bindPopup(popup_392313fbca60bf2802e965e39235351b)
+        ;
+
+        
+    
+    
+            marker_755ae31161c52fb5644f833743bda1bc.bindTooltip(
+                `<div>
+                     Votre adresse
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_755ae31161c52fb5644f833743bda1bc.setIcon(icon_85d4aa857ced0d171c99816fed26abf2);
+            
+</script>
+</html>

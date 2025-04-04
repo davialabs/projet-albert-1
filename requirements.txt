@@ -2,3 +2,7 @@ langgraph
 langchain
 geopy
 folium
+pandas
+langchain-openai
+langgraph-cli
+langgraph-api
