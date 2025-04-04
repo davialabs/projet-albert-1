@@ -45,10 +45,10 @@ ehthumbs.db
 Thumbs.db
 
 # Project specific
+*.html
 *.log
 *.csv
 *.json
-*.html
 !data_mairies.csv 
 
 # LangGraph API
