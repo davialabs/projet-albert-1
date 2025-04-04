@@ -49,3 +49,6 @@ Thumbs.db
 *.csv
 *.json
 !data_mairies.csv 
+
+# LangGraph API
+.langgraph_api/
